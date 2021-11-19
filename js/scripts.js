@@ -1,35 +1,40 @@
 //business logic
-let wordArray1 = [];
-let wordArray2 = [];
-let wordArray3= [];
-var number = parseInt($('input#text').val());
+const beep = 'beep!'
+const boop = 'boop!'
+const neighbor = "Won't you be my neighbor?"
 
-
-function beepboop(element) {
-  for (let i= 0; i <= number; i++) {
-    const element = i.toString();
-    if (element.includes(3)) {
-      wordArray1.push("Won't you be my neighbor?");
-    } else if (element.includes(2)) {
-      wordArray1.push('Boop!');
-    } else if (element.includes(1)) {
-      wordArray1.push("Beep");
-    } else {
-      wordArray1.push(element);
-    }
+var roboText = function(input) {
+  let number = [];
+  for (let i = 0; i <= input; i++) {
+    number.push(i.toString());
   }
-  return wordArray1;
-}
-  
-
-
+  var roboger = number.map(function(number) {
+    if (number.includes('3')) {
+      return number = neighbor;
+    } else if (number.includes('2')) {
+      return number = boop;
+    } else if (number.includes('1')) {
+      return number = beep;
+    } else {
+      return number;
+    };
+  });
+  console.log(roboger)
+  return roboger;
+};
 
 //UI logic
 $(document).ready(function() {
-  $("#form").submit(function(event) {
+  $("form#number").submit(function(event) {
     event.preventDefault();
-    const number = $("#text").val();
-    const roboMessage = beepboop(number);
-    $("#result").html(roboMessage);
+    var input = parseInt($("input#input").val());
+    var result = roboText(input);
+    $("#results").text(result);
+    $(".output").show();
+    $("img").click(function() {
+      $("#results").text(result.reverse());
+    });
   });
+  
 });
+
