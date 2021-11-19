@@ -1,0 +1,14 @@
+h1 {
+  font-family: 'Alegreya', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  color: hotpink;
+}
+
+.jumbotron {
+  background-image:url('robo.jpg');
+  height:300px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  border-bottom:1px solid #ff6a00
+}
